@@ -10,11 +10,11 @@ public class RPM implements Comparable<RPM> {
     }
 
     boolean greaterThan(RPM other) {
-        return other.compareTo(this) > 0;
+        return compareTo(other) > 0;
     }
 
     boolean lowerThan(RPM other) {
-        return compareTo(other) > 0;
+        return other.compareTo(this) > 0;
     }
 
     @Override
