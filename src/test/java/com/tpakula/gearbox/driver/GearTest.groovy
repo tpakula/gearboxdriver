@@ -36,4 +36,26 @@ class GearTest extends Specification {
         3           || 2
         1           || 0
     }
+
+    def "should compare greater gear"() {
+        given:
+        def lowerGear = new Gear(3)
+        def higherGear = new Gear(5)
+        expect:
+        !lowerGear.greaterThan(higherGear)
+        higherGear.greaterThan(lowerGear)
+        !lowerGear.greaterThan(lowerGear)
+        !higherGear.greaterThan(higherGear)
+    }
+
+    def "should compare lower gear"() {
+        given:
+        def lowerGear = new Gear(3)
+        def higherGear = new Gear(5)
+        expect:
+        lowerGear.lowerThan(higherGear)
+        !higherGear.lowerThan(lowerGear)
+        !lowerGear.lowerThan(lowerGear)
+        !higherGear.lowerThan(higherGear)
+    }
 }
