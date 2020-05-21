@@ -3,7 +3,7 @@ package com.tpakula.gearbox.driver;
 import java.util.Objects;
 
 public class Gear implements Comparable<Gear> {
-    private int gear;
+    final int gear;
 
     Gear(int gear) {
         this.gear = gear;
