@@ -13,7 +13,9 @@ class GearCalculatorTest extends Specification {
 
         def GEAR_RANGE = GearRange.create(1, 5)
 
-        def calculator = new GearCalculator(MIN_RPM, MAX_RPM, GEAR_RANGE)
+        def RPM_RANGE = RPMRange.create(MIN_RPM, MAX_RPM)
+
+        def calculator = new GearCalculator(RPM_RANGE, GEAR_RANGE)
         expect:
         expectedGear == calculator.calulateGear(currentRPM, currentGear)
 

@@ -57,6 +57,9 @@ public class GearboxDriver {
 
         GearRange gearRange = GearRange.create(MIN_GEAR, MAX_GEAR);
 
-        return new GearCalculator(minRpm, maxRpm, gearRange);
+
+        RPMRange rpmRange = RPMRange.create(minRpm, maxRpm);
+
+        return new GearCalculator(rpmRange, gearRange);
     }
 }

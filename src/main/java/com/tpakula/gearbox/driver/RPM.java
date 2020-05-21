@@ -9,17 +9,25 @@ public class RPM implements Comparable<RPM> {
         this.rpm = rpm;
     }
 
+    boolean isAbove(RPMRange range) {
+        return greaterThan(range.max);
+    }
+
+    boolean isBelow(RPMRange range) {
+        return lowerThan(range.min);
+    }
+
+    @Override
+    public int compareTo(RPM other) {
+        return Long.compare(rpm, other.rpm);
+    }
+
     boolean greaterThan(RPM other) {
         return compareTo(other) > 0;
     }
 
     boolean lowerThan(RPM other) {
         return other.compareTo(this) > 0;
-    }
-
-    @Override
-    public int compareTo(RPM other) {
-        return Long.compare(rpm, other.rpm);
     }
 
     public static RPM create(long rpm) {
